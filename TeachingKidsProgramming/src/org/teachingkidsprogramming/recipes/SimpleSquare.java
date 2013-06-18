@@ -15,12 +15,22 @@ public class SimpleSquare
   }
   public static void moveMe()
   {
-    for (int i = 0; i < 4; i++)
+    int penWidth = 5;
+    float hue = 0;
+    int angle = 15;
+    while (true)
     {
-      Tortoise.setPenColor(Color.BLUE);
-      Tortoise.move(50);
-      Tortoise.turn(90);
+      Tortoise.setPenWidth(penWidth);
+      Tortoise.setPenColor(Color.getHSBColor(hue, 1, 1));
+      Tortoise.move(10);
+      Tortoise.turn(angle);
+      //penWidth++;
+      hue += .01;
+      if (hue > 1)
+      {
+        hue = 0;
+      }
+      angle += 1;
     }
-    moveMe();
   }
 }
