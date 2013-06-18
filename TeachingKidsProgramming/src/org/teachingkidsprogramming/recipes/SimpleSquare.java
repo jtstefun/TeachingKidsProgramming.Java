@@ -10,6 +10,7 @@ public class SimpleSquare
   {
     Tortoise.show();
     //  Make the tortoise move as fast as possible --#6
+    Tortoise.setSpeed(10);
     moveMe();
   }
   public static void moveMe()
