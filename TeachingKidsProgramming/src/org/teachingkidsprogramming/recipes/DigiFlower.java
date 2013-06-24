@@ -1,15 +1,41 @@
 package org.teachingkidsprogramming.recipes;
 
+import java.awt.Color;
+
+import org.teachingextensions.logo.ColorWheel;
+import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.Tortoise;
+
 public class DigiFlower
 {
   public static void main(String[] args)
   {
-    //    Show the tortoise --#1
-    //    Make the tortoise move as fast as possible --#7
-    //    Make the background silver --#8
-    //    Make the line the tortoise draws 3 pixels wide --#20
-    //    createColorPalette (recipe below) --#9
-    //    Do the following 15 times --#19
+    Tortoise.show();
+    Tortoise.setSpeed(10);
+    Tortoise.getBackgroundWindow().setColor(Colors.Grays.Silver);
+    Tortoise.setPenWidth(3);
+    Color _color1 = Colors.Reds.Red;
+    Color _color2 = Colors.Oranges.DarkOrange;
+    Color _color3 = Colors.Yellows.Gold;
+    Color _color4 = Colors.Yellows.Yellow;
+    ColorWheel.addColor(_color1);
+    ColorWheel.addColor(_color2);
+    ColorWheel.addColor(_color3);
+    ColorWheel.addColor(_color4);
+    ColorWheel.addColor(_color4);
+    ColorWheel.addColor(_color3);
+    ColorWheel.addColor(_color2);
+    ColorWheel.addColor(_color1);
+    for (int i = 0; i < 15; i++)
+    {
+      for (int j = 0; j < 8; j++)
+      {
+        Tortoise.setPenColor(ColorWheel.getNextColor());
+        Tortoise.move(50);
+        Tortoise.turn(360 / 8);
+      }
+      Tortoise.turn(360 / 15);
+    }
     //      drawOctogon (recipe below) --#10
     //      Turn the tortoise 1/15th of 360 degrees to the right --#18
     //    Repeat
