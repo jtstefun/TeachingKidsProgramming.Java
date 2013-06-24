@@ -1,27 +1,45 @@
 package org.teachingkidsprogramming.recipes;
 
+import java.awt.Color;
+
+import org.teachingextensions.logo.ColorWheel;
+import org.teachingextensions.logo.Colors;
+import org.teachingextensions.logo.Tortoise;
+
 public class PentagonCrazy
 {
   public static void main(String[] args)
   {
-    //    Make the tortoise move as fast as possible --#3
+    Tortoise.setSpeed(10);
     //    createColorPalette (recipe below) --#8
     //    ------------- Recipe for createColorPalette --#8
-    //    Add steel blue to the color wheel --#7
-    //    Add dark orchid to the color wheel --#11
-    //    Add dark slate blue to the color wheel --#12
-    //    Add teal to the color wheel --#13
-    //    Add indigo to the color wheel --#14
-    //    ------------- End of createColorPalette recipe 
+    Color _color1 = Colors.Blues.SteelBlue;
+    Color _color2 = Colors.Purples.DarkOrchid;
+    Color _color3 = Colors.Blues.DarkSlateBlue;
+    Color _color4 = Colors.Blues.Teal;
+    Color _color5 = Colors.Purples.Indigo;
+    ColorWheel.addColor(_color1);
+    ColorWheel.addColor(_color2);
+    ColorWheel.addColor(_color3);
+    ColorWheel.addColor(_color4);
+    ColorWheel.addColor(_color5);
     //    DrawPentagon (recipe below) --#10
     //    ------------- Recipe for drawPentagon --#10
+    for (int i = 0; i < 200; i++)
+    {
+      int _penWidth = 1;
+      _penWidth++;
+      if (_penWidth > 4)
+      {
+        _penWidth = 1;
+      }
+      Tortoise.setPenColor(ColorWheel.getNextColor());
+      Tortoise.setPenWidth(_penWidth);
+      Tortoise.move(200);
+      Tortoise.turn(360 / 5);
+      Tortoise.turn((360 / 5) + 1);
+    }
     //    Do the following 200 times --#2
-    //        AdjustPen (recipe below) --#9
-    //        ------------- Recipe for adjustPen --#9
-    //        Change the color of the line the tortoise draws to the next color on the color wheel --#6
-    //        Increase the tortoises pen width by 1 --#15                                              
-    //        If the tortoises pen width is greater than 4, then --#17
-    //            Reset it to 1 --#16
     //        ------------- End of adjustPen recipe 
     //        Move the tortoise the length of a side --#4
     //        Turn the tortoise 1/5th of 360 degrees --#1
