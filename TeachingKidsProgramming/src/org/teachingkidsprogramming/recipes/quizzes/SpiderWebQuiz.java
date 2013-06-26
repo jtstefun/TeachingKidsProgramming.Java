@@ -8,6 +8,10 @@ public class SpiderWebQuiz extends SpiderQuiz
   public void question1()
   {
     //         Do the following the current number of times
+    for (int i = 1; i <= i; i++)
+    {
+      circle();
+    }
     //        Call circle()
     //        Repeat
   }
