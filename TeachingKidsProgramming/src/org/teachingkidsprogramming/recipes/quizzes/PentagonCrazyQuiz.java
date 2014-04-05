@@ -1,17 +1,22 @@
 package org.teachingkidsprogramming.recipes.quizzes;
 
 import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonCrazyQuizGrader;
-import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonQuiz;
+import org.teachingkidsprogramming.recipes.quizzes.graders.PentagonQuizAdapter;
 
-public class PentagonCrazyQuiz extends PentagonCrazyQuizGrader
+public class PentagonCrazyQuiz extends PentagonQuizAdapter
 {
-  //      Question1
-  //      Create a method called thread
-  //       that moves the tortoise 6 pixels
+  public void question1()
+  {
+    // Question 1 
+    //   thread (recipe below) 
+    //   ------------- Recipe for thread
+    //       that moves the tortoise 6 pixels
+    //   ------------- End of thread recipe
+  }
   public void question2()
   {
     //        Do the following 76 times
-    //        Quiz.Stitch()
+    //           call stitch
     //        Repeat
   }
   public void question3()
@@ -24,6 +29,6 @@ public class PentagonCrazyQuiz extends PentagonCrazyQuizGrader
   }
   public static void main(String[] args)
   {
-    new PentagonCrazyQuizGrader().grade(new PentagonQuiz());
+    new PentagonCrazyQuizGrader().grade(new PentagonCrazyQuiz());
   }
 }
